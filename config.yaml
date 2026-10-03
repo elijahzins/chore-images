@@ -1,0 +1,43 @@
+annotation_task_name: "Chore Classification Task"
+task_dir: "."
+
+port: 8000
+
+data_files:
+  - "data.json"
+
+item_properties:
+  id_key: "id"
+  text_key: "image_url"
+
+instance_display:
+  fields:
+    - key: "image_url"
+      type: "image"
+      display_options:
+        max_width: 600
+
+output_annotation_dir: "annotation_output/"
+
+user_config:
+  allow_all_users: True
+  users: []
+
+annotation_schemes:
+  - annotation_type: "radio"
+    name: "chore_type"
+    description: "Select the type of chore shown in the image:"
+    labels:
+      - "Washing Dishes"
+      - "Taking Out Trash"
+
+  - annotation_type: "radio"
+    name: "completion_status"
+    description: "Is this chore complete or incomplete?"
+    labels:
+      - "Complete"
+      - "Incomplete"
+
+  - annotation_type: "text"
+    name: "justification_note"
+    description: "Provide a short note explaining why the task is complete or incomplete:"
